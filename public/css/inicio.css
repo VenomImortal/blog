@@ -1,0 +1,165 @@
+.bemvindo{
+    background-image: url("/img/apresentacao.png") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 71px;
+    margin-bottom: 90px;
+    width: 100%;
+    padding-bottom: 50px;
+    
+    
+   
+    
+}.texto{
+    width: 70%;
+    animation: infinite aparecer 9s;
+    padding: 10px;
+    
+}
+main h1{
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+@keyframes aparecer{
+    0%{opacity: 1;
+        transition: 4s ease;
+    }
+    45%{opacity: 1;
+    transition: 4s;}
+
+    50%{opacity: 0;}
+
+    100%{opacity: 0;
+    transition: 4s;}
+}
+#texto{
+    line-height: 2.4rem;
+    color: rgb(240, 205, 9);
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.texto2{
+    position: absolute;
+    line-height: 2.3rem;
+    top: 59px;
+    right: 0;
+    padding: 15px;
+    text-align: end;
+    width: 90%;
+    padding: 15px;
+    font-family:fantasy;
+     font-size: 1.3rem;
+
+     animation: infinite 9s desaparecer;
+
+}
+@keyframes desaparecer{
+    0%{opacity: 0;}
+
+    45%{opacity: 0;}
+
+    50%{opacity: 1;
+    transition: 4s ease;}
+    
+    100%{opacity: 1;}
+}
+#texto2{
+    color: whitesmoke;
+}
+.btn{
+    text-align: center;
+}
+.btn button{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border: none;
+    padding: 20px;
+    border-radius: 9px;
+    background: linear-gradient(to right, rgb(3, 192, 250), rgb(0, 73, 156));
+    color: whitesmoke;
+    transition:  .30s ease-out;
+    animation: infinite 3s pulsar; 
+}
+@keyframes pulsar{
+    0%{border:3px solid whitesmoke;}
+    25%{border-color: transparent;}
+    50%{border:3px solid whitesmoke }
+    75%{border-color:transparent ;}
+    100%{border:3px solid whitesmoke;}
+}
+.btn button:active{
+    background:  rgb(3, 94, 168);
+}
+
+
+.main{
+    width: 100%;
+    background-color: #35088800;
+    text-align: center;
+    margin-bottom: 150px;
+    line-height: 30px;
+   
+   
+}
+.texto-curto{
+
+    width: 90%;
+    margin: 10px auto; /* centraliza horizontalmente */
+    padding: 10px;
+    text-align: justify;
+    color: rgb(27, 26, 26);
+    border-radius: 5px;
+    overflow-wrap: break-word;
+    
+}
+.btn-container{
+    
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 80px;
+}
+#imagem{
+    width: 50%;
+}
+/*#ler-mais, #remover{
+    text-decoration: none;
+    
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+
+}*/
+#remover{
+    background-color: rgb(255, 0, 21);
+    text-decoration: none;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+}
+#ler-mais{ 
+    text-decoration: none;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(5, 148, 192);
+    margin-bottom: 5px;
+    transition: background .2s ease;
+}
+#ler-mais:active{
+    background-color: rgb(2, 79, 102);
+}
+#ler-mais:hover{
+    background-color: rgb(3, 122, 158);;
+}
+@media(max-width:360px){
+    #imagem{
+        width: 90%;
+    }
+}
+ 

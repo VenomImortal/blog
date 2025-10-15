@@ -1,0 +1,51 @@
+
+ <head>
+    <link rel="stylesheet" href="/css/inicio.css">
+ </head>
+ 
+ <section class="bemvindo"  >
+  
+   <div class="texto">
+   <h1 id="texto">"Transformamos ideias em negócios de sucesso. <br>
+Com estratégias inteligentes e visão empreendedora, <br> ajudamos você a construir resultados sólidos e sustentáveis."</h1>
+</div>
+
+<div class="texto2">
+   <h1 id="texto2">"Empreender é mais do que abrir um negócio: é criar oportunidades.
+Estamos aqui para impulsionar a sua jornada com estratégias que geram crescimento real."</h1>
+</div>
+<div class="btn"> <a href="/categoria/inicio"><button>Começar por aqui </button></a></div>
+
+ </section>
+<main class="main">
+
+   
+
+   
+    {{#each artigos}}
+
+    
+    <h1>{{titulo}}</h1>
+    
+   <div class="texto-curto">
+    <p>{{{limitar conteudo}}}</p>
+    </div>
+    
+    
+    {{#if imagem}}
+    <img id="imagem" src="../uploads/{{imagem}}" alt="">
+    <br>
+    {{/if}}
+   
+
+     <div class="btn-container">
+     <a id="ler-mais" href="/post/{{id}}">Ler Mais </a>
+    {{#if ../admin}}
+    <a id="remover" href="/admin/remover/{{id}}">apagar</a>
+    {{/if}}
+     
+     </div>
+    
+    
+    {{/each}}
+</main>

@@ -1,0 +1,17 @@
+<head>
+    <link rel="stylesheet" href="/css/feedback.css">
+</head>
+<div class="caixa">
+    <h1>  Feedback </h1>
+{{#each perfil}}
+
+<div class="container-sms">
+<p>{{user}}</p>
+<p>{{mensagem}}</p>
+<div class="remover">
+<a href="/admin/remover/feedback/{{id}}">Apagar</a>
+</div>
+
+</div>
+{{/each}}
+</div>

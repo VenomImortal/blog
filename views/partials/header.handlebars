@@ -1,0 +1,35 @@
+<head>
+    
+    <meta charset="UTF8">
+    <link rel="stylesheet" href="/css/header.css">
+
+</head>
+<header>
+  
+    <img class="logo" src="/img/capital.png" alt="logotipo">
+
+    <div id="btn-open"  class="btn-open">
+        <img onclick="abrirMenu()" src="/img/menu3.png" alt="menu-btn">
+    </div>
+    
+ 
+    <nav class="nav">
+         
+        
+        <ul>
+            <li></li>
+            <li><a href="/">Ínicio</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+            {{#if admin}}
+            <li><a href="/admin">Dashboard</a></li>
+            {{/if}}
+             
+            
+        </ul>
+    </nav>
+
+   
+
+    
+</header>

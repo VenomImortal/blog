@@ -1,0 +1,68 @@
+footer{
+    width: 100%;
+    position: static;
+    background-color: rgb(4, 0, 31);
+    z-index: 1;
+    padding: 10px;
+}
+footer ul p{
+    margin-bottom: 8px;
+    color: dodgerblue;
+}
+footer ul {
+    list-style: none;
+    
+}
+footer ul li{
+     margin-bottom: 20px;
+}
+footer ul li a{
+    text-decoration: none;
+    color: white;
+   
+}
+footer a:hover{
+    color: rgb(122, 122, 122);
+}
+.link-rapidos{
+    display: flex;
+    gap: 100px;
+}
+.social p{
+    text-align: end;
+    color: dodgerblue;
+    margin-bottom: 20px;
+    font-size: 19px;
+    margin-right: 50px;
+}
+.social{
+    margin-bottom: 80px;
+}
+.section{
+
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+#zona69{
+    filter: none;
+    width: 70px;
+}
+.section a img{
+    width: 60px;
+    filter: invert(1);
+    transition: .30s ease-in-out;
+ }
+ .section a img:hover{
+    transform: scale(1.04);
+ }
+ .copyright{
+    color: white;
+    text-align: center;
+ }
+ .copyright p{
+    margin-bottom: 10px;
+ }
+ .copyright p:nth-child(2){
+    font-size: 14px;
+ }

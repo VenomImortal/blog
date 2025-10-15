@@ -1,0 +1,36 @@
+
+<head>
+    <link rel="stylesheet" href="/css/inicio.css">
+</head>
+<main class="main">
+
+   
+
+   
+    {{#each artigos}}
+
+    
+    <h1 style="margin-top:100px;">{{titulo}}</h1>
+    
+   <div class="texto-curto">
+    <p>{{limitar conteudo}}</p>
+    </div>
+    
+    
+    {{#if imagem}}
+    <img src="../uploads/{{imagem}}" alt="" style="width: 50%;">
+    <br>
+    {{/if}}
+   
+
+     <div class="btn-container">
+     <a id="ler-mais" href="/post/{{id}}">Ler Mais </a>
+    {{#if ../admin}}
+    <a id="remover" href="/admin/remover/{{id}}">apagar</a>
+    {{/if}}
+     
+     </div>
+    
+    
+    {{/each}}
+</main>

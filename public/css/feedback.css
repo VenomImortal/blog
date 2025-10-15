@@ -1,0 +1,48 @@
+.caixa{
+     margin-top: 70px;
+     padding: 5px;
+}
+.container-sms{
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 5px 1px;
+    width: 70%;
+    border-radius: 5px;
+    background-color: rgba(248, 246, 246, 0.747);
+    transition:  .30s ease;
+   
+}
+.container-sms:hover{
+    transform: translateY(-10px);
+    
+}
+
+ p:nth-child(1){
+    margin-bottom: 5px;
+    font-weight: bold;
+   
+}
+p:nth-child(2){
+    margin-bottom: 5px;
+}
+h1{
+    text-align: center;
+    margin-bottom:10px ;
+}
+.container-sms a{
+    text-decoration: none;
+    padding: 5px;
+    color: rgb(15, 15, 15);
+    background-color: rgb(255, 2, 2);
+    border-radius: 3px;
+    transition: .30s ease-in-out;
+   
+   
+}
+.container-sms a:hover{
+    background-color: rgb(199, 4, 52);
+}
+.remover{
+    display: flex;
+    justify-content: end;
+}

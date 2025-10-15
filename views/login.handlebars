@@ -1,0 +1,16 @@
+
+<head>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<form action="/admin/login" id="form" method="POST">
+    <input type="text" name="usuario" id="nome" placeholder="Username" required>
+    <p id="erro-nome"></p>
+    <br>
+    <input type="password" name="senha" id="senha" placeholder="Senha" required>
+    <p id="erro-senha"></p>
+    <br>
+    <button  id="button" onclick="verificar()" type="submit">Entrar</button>
+    <img style="width: 150px; border-radius: 50%; border: 1px solid; height: 150px" src="/img/images.jpeg" alt="">
+</form>
+<script src="/js/flashSMS"></script>

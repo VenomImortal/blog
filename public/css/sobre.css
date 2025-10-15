@@ -1,0 +1,53 @@
+.container-perfil{
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 71px;
+    margin-bottom: 50px;
+}
+#img{
+    border: 3px solid rgb(0, 153, 255);
+    margin-top: 55px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 250px;
+    border-radius: 50%;
+    transition: .30s ease-in;
+}
+.container-perfil #img:hover{
+    transform: scale(1.10);
+}
+span{
+    
+    font-weight: bolder;
+    font-size: 22px;
+    color: white;
+}
+.biografia{
+    line-height: 1.6;
+    margin-top: 30px;
+}
+.biografia p{
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+.texto{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  
+}
+.container-texto{
+    padding: 10px;
+    text-align: center;
+    line-height: 1.9;
+    width: 90%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px 1px;
+    background: rgba(255, 255, 255, 0.05); 
+   
+}
+.container-texto:hover{
+    box-shadow: 0px 0px 10px 5px rgb(0, 183, 255);
+}
