@@ -12,7 +12,8 @@ const Post= db.sequelize.define("poster", {
     }, 
     categoria:{
         type: db.Sequelize.STRING
-    }
+    },
+    tableName: "posts"
 })
 
 //Post.sync({force: true})
