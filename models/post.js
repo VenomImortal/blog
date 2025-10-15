@@ -18,5 +18,5 @@ const Post= db.sequelize.define("poster", {
      tableName: "posters"
 })
 
-//Post.sync({force: true})
+Post.sync({force: true})
 module.exports = Post
