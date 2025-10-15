@@ -2,7 +2,7 @@
 require("dotenv").config()
 const express = require("express")
 const app = express()
-const porta = process.env.PORTA
+const PORT = process.env.PORT
 const Post = require("./models/post")
 const perfil = require("./models/perfil")
 const {engine: exphbs} = require("express-handlebars")
@@ -95,6 +95,6 @@ app.use("/admin", removerfeedbackRota)
 
 //=====================================================
 
-app.listen(porta, ()=>{
-    console.log(`servidor rodando na porta ${porta}`)
+app.listen(PORT, ()=>{
+    console.log(`servidor rodando na porta ${PORT}`)
 })
