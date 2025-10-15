@@ -15,7 +15,7 @@ const Post= db.sequelize.define("poster", {
     }
     },
                                 {
-     tableName: "posts"
+     tableName: "posters"
 })
 
 //Post.sync({force: true})
