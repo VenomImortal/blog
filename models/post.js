@@ -12,9 +12,11 @@ const Post= db.sequelize.define("poster", {
     }, 
     categoria:{
         type: db.Sequelize.STRING
+    }
     },
-    tableName: "posts"
+                                {
+     tableName: "posts"
 })
 
-Post.sync({force: true})
+//Post.sync({force: true})
 module.exports = Post
