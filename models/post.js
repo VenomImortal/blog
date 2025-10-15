@@ -14,7 +14,7 @@ const Post= db.sequelize.define("poster", {
         type: db.Sequelize.STRING
     }
     },
-                                {
+    {
      tableName: "posters"
 })
 
