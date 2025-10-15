@@ -21,7 +21,7 @@ app.use(session({
 }))
 
 app.use((req, res, next) => {
-    console.log("sessao actual", req.session)
+    
   res.locals.admin = req.session.admin || false;
   next();
 });
