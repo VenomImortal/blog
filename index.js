@@ -110,16 +110,7 @@ app.use("/admin", removerfeedbackRota)
 //=====================================================
 
 //============== ROTA DE LOGIN ADMIN ==================
-app.post("/login", (req, res) => {
-  const { username, password } = req.body
 
-  if (username === process.env.USERNAME_ADMIN && password === process.env.SENHA_ADMIN) {
-    req.session.admin = { username }
-    return res.redirect("/admin")
-  } else {
-    return res.render("login", { error: "Credenciais inválidas" })
-  }
-})
 
 //============== MIDDLEWARE ADMIN =====================
 function adminAuth(req, res, next) {
