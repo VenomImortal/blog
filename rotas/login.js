@@ -12,15 +12,14 @@ login.post("/admin/login", (req, res) => {
     usuario === process.env.USERNAME_ADMIN &&
     senha === process.env.SENHA_ADMIN
   ) {
-    req.session.admin = {
-      usuario: usuario
-    }
-
-    console.log("Admin logado com sucesso")
+    req.session.admin = true
+    console.log("ADMIN LOGADO")
     return res.redirect("/admin")
-  } else {
-    return res.redirect("/admin/login")
   }
+
+  return res.render("login", {
+    error: "Usuário ou senha inválidos"
+  })
 })
 
 login.get("/logout", (req, res) => {
