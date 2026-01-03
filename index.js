@@ -36,9 +36,9 @@ app.use(session({
   saveUninitialized: false,
   name: 'capitalzero.sid',
   cookie: {
-    secure: true,       // HTTPS
+    secure: false,       // HTTPS
     httpOnly: true,
-    sameSite: 'none',   // necessário para cross-site no Render
+    sameSite: 'lax',   // necessário para cross-site no Render
     maxAge: 1000 * 60 * 60 * 24 // 1 dia
   }
 }))
