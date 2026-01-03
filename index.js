@@ -12,32 +12,33 @@ const path = require("path")
 const fs = require("fs")
 const fileupload = require("express-fileupload")
 const session = require("express-session")
-const MySQLStore = require("express-mysql-session")(session)
+const pgSession = require("connect-pg-simple")(session)
+const { Pool } = require("pg")
 
-//=============== Configuração do MySQLStore ===============
-const dbUrl = new URL(process.env.DATABASE_URL)
-
-const sessionStore = new MySQLStore({
-  host: dbUrl.hostname,
-  user: dbUrl.username,
-  password: dbUrl.password,
-  database: dbUrl.pathname.replace('/', ''),
-  port: dbUrl.port || 3306
+//=============== Configuração do PostgreSQL ===============
+const pgPool = new Pool({
+  connectionString: process.env.DATABASE,
+  ssl: {
+    rejectUnauthorized: false
+  }
 })
 
 //=============== Configuração da Session ===============
-app.set('trust proxy', 1) // importante para Render (HTTPS)
+app.set('trust proxy', 1) // necessário no Render
 
 app.use(session({
-  name: 'capitalzero.sid',
+  store: new pgSession({
+    pool: pgPool,
+    tableName: 'session'
+  }),
   secret: process.env.SESSION_SECRET || 'venomimortal',
-  store: sessionStore,
   resave: false,
   saveUninitialized: false,
+  name: 'capitalzero.sid',
   cookie: {
-    secure: true,       // HTTPS obrigatório
+    secure: true,       // HTTPS
     httpOnly: true,
-    sameSite: 'none',   // necessário para Render / cross-site
+    sameSite: 'none',   // necessário para cross-site no Render
     maxAge: 1000 * 60 * 60 * 24 // 1 dia
   }
 }))
@@ -107,6 +108,29 @@ app.use("/", contactoRota)
 app.use("/admin", removerfeedbackRota)
 
 //=====================================================
+
+//============== ROTA DE LOGIN ADMIN ==================
+app.post("/login", (req, res) => {
+  const { username, password } = req.body
+
+  if (username === process.env.USERNAME_ADMIN && password === process.env.SENHA_ADMIN) {
+    req.session.admin = { username }
+    return res.redirect("/admin")
+  } else {
+    return res.render("login", { error: "Credenciais inválidas" })
+  }
+})
+
+//============== MIDDLEWARE ADMIN =====================
+function adminAuth(req, res, next) {
+  if (!req.session.admin) {
+    return res.redirect("/login")
+  }
+  next()
+}
+
+//=====================================================
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`)
 })
