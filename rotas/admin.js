@@ -4,6 +4,6 @@ const rotaAdmin = express.Router()
 
 
 rotaAdmin.get("/", auth, (req, res)=>{
-    res.render("admin", {admin: req.session.admin})
+    res.render("admin")
 })
 module.exports = rotaAdmin ;
