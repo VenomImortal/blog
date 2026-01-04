@@ -53,6 +53,8 @@ app.use((req, res, next) => {
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+app.use(express.static("public"))
+
 //========== Exportação De Rotas ======================
 const inicioRota = require("./rotas/inicio")
 const adminRota = require("./rotas/admin")
@@ -69,7 +71,7 @@ const { helpers } = require("handlebars")
 const { text } = require("body-parser")
 
 //=============== Liberar Pasta de Arquivo ===============
-app.use(express.static("public"))
+
 
 //============= CONFIG HANDLEBARS =====================
 app.engine('handlebars', exphbs({
